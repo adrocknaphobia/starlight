@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/astro/tsconfigs/strictest.json",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"]
