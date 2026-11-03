@@ -25,3 +25,24 @@
 [data-has-hero] .hero > img {
 	filter: drop-shadow(0 0 3rem var(--overlay-blurple));
 }
+
+[data-has-hero] .hero .copy {
+	color: #0040ff;
+}
+
+[data-has-hero] .hero .copy h1 {
+	color: #3888ff;
+}
+
+/* Accent override: #ff007f in place of Catppuccin mauve */
+:root {
+	--sl-color-accent-low: hsl(330, 100%, 20%);
+	--sl-color-accent: #ff007f;
+	--sl-color-accent-high: hsl(330, 100%, 80%);
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: hsl(330, 100%, 85%);
+	--sl-color-accent: #ff007f;
+	--sl-color-accent-high: hsl(330, 100%, 35%);
+}

@@ -20,6 +20,7 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/starlight": "workspace:*",
+    "@catppuccin/starlight": "^2.1.0",
     "@lunariajs/core": "^0.2.0",
     "@types/culori": "^4.0.1",
     "astro": "^7.2.10",

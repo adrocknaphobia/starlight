@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
+import starlightCatppuccin from '@catppuccin/starlight';
 import markdocGrammar from './grammars/markdoc.tmLanguage.json';
 
 /** @satisfies {import('@astrojs/starlight/types').StarlightUserConfig['locales']} */
@@ -37,7 +38,7 @@ export default defineConfig({
 	trailingSlash: 'always',
 	integrations: [
 		starlight({
-			title: 'Starlight',
+			title: 'adrock',
 			logo: {
 				light: '/src/assets/logo-light.svg',
 				dark: '/src/assets/logo-dark.svg',
@@ -190,14 +191,17 @@ export default defineConfig({
 				},
 			],
 			expressiveCode: { shiki: { langs: [markdocGrammar] } },
-			plugins: process.env.CHECK_LINKS
-				? [
-						starlightLinksValidator({
-							errorOnFallbackPages: false,
-							errorOnInconsistentLocale: true,
-						}),
-					]
-				: [],
+			plugins: [
+				starlightCatppuccin(),
+				...(process.env.CHECK_LINKS
+					? [
+							starlightLinksValidator({
+								errorOnFallbackPages: false,
+								errorOnInconsistentLocale: true,
+							}),
+						]
+					: []),
+			],
 		}),
 	],
 });
